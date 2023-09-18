@@ -47,4 +47,15 @@ public class Smartphone extends Prodotto {
 			+ " - " 
 			+ "Memoria :" + getMemoria();
 	}
+	
+	@Override
+	public float sconto() {
+		float prezzoScontato = 0;
+		
+		if (getMemoria() < 32) prezzoScontato = getPrezzo() - ((getPrezzo() * 5) / 100);
+		else prezzoScontato = super.sconto();
+		
+		return prezzoScontato;
+	}
+
 }
