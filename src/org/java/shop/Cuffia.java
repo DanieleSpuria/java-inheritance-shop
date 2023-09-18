@@ -35,4 +35,16 @@ public class Cuffia extends Prodotto{
 	public void setW_c(boolean w_c) {
 		this.w_c = w_c;
 	}
+	
+	
+	// VARIO //
+	
+	@Override
+	public String toString() {
+		return super.toString() 
+			+ " - " 
+			+ "Dimensioni: " + getColore() + "\n" 
+			+ " - " 
+			+ "Wireless o cablato :" + getW_c();
+	}
 }
