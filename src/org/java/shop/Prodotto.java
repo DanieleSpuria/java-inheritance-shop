@@ -84,4 +84,8 @@ public class Prodotto {
 			+ " - " 
 			+ "Iva: " + getIva() + "\n";
 	}
+	
+	public float sconto() {
+		return getPrezzo() - ((getPrezzo() * 2) / 100);
+	}
 }

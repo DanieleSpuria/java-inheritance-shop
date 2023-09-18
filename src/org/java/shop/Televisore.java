@@ -37,6 +37,8 @@ public class Televisore extends Prodotto{
 	}
 	
 	
+	// VARIO //
+	
 	@Override
 	public String toString() {
 		return super.toString() 

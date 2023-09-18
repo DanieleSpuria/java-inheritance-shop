@@ -19,19 +19,22 @@ public class Carrello {
 		
 		System.out.println("Cosa vuoi aggiungere nel carrello? (smartphone, televisore, cuffia)");
 		String richiesta = scan.nextLine().toLowerCase();
+		System.out.println("Hai la tessera fedeltà? (true o false): ");
+		boolean tessera  = scan.nextBoolean();
 		
 		switch (richiesta) {
 			case "smartphone":
 				System.out.print("Codice: ");
 				codice = scan.nextLine();
+				scan.nextLine();
 				System.out.print("Nome: ");
-				nome = scan.nextLine();
+				nome   = scan.nextLine();
 				System.out.print("Marca: ");
-				marca = scan.nextLine();
+				marca  = scan.nextLine();
 				System.out.print("Prezzo: ");
-				prezzo = scan.nextFloat();
+				prezzo = scan.nextFloat();			
 				System.out.print("Iva: ");
-				iva = scan.nextFloat();
+				iva    = scan.nextFloat();
 				scan.nextLine();
 				
 				System.out.print("Imei: ");
@@ -40,19 +43,21 @@ public class Carrello {
 				int memoria = scan.nextInt();
 				
 				sma = new Smartphone(codice, nome, marca, prezzo, iva, imei, memoria);
+				if (tessera) sma.setPrezzo(sma.sconto());
 			break;
 	
 			case "televisore":
 				System.out.print("Codice: ");
 				codice = scan.nextLine();
+				scan.nextLine();
 				System.out.print("Nome: ");
-				nome = scan.nextLine();
+				nome   = scan.nextLine();
 				System.out.print("Marca: ");
-				marca = scan.nextLine();
+				marca  = scan.nextLine();
 				System.out.print("Prezzo: ");
 				prezzo = scan.nextFloat();
 				System.out.print("Iva: ");
-				iva = scan.nextFloat();
+				iva    = scan.nextFloat();
 				scan.nextLine();
 				
 				System.out.print("Dimensione: ");
@@ -61,19 +66,21 @@ public class Carrello {
 				boolean  smart = scan.nextBoolean();
 				
 				tel = new Televisore(codice, nome, marca, prezzo, iva, dimensione, smart);
+				if (tessera) tel.setPrezzo(tel.sconto());
 			break;
 				
 			case "cuffia":
 				System.out.print("Codice: ");
 				codice = scan.nextLine();
+				scan.nextLine();
 				System.out.print("Nome: ");
-				nome = scan.nextLine();
+				nome   = scan.nextLine();
 				System.out.print("Marca: ");
-				marca = scan.nextLine();
+				marca  = scan.nextLine();
 				System.out.print("Prezzo: ");
 				prezzo = scan.nextFloat();
 				System.out.print("Iva: ");
-				iva = scan.nextFloat();
+				iva    = scan.nextFloat();
 				scan.nextLine();
 				
 				System.out.print("Colore: ");
@@ -82,6 +89,7 @@ public class Carrello {
 				boolean  w_c = scan.nextBoolean();
 				
 				cuf = new Cuffia(codice, nome, marca, prezzo, iva, colore, w_c);
+				if (tessera) cuf.setPrezzo(cuf.sconto());
 			break;
 		}
 		
