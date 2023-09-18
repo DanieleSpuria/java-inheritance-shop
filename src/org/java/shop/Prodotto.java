@@ -57,10 +57,15 @@ public class Prodotto {
 	}
 	
 	
-	// PREZZI //
+	// VARIO //
 	
-	public float prezzoIva() {
-		float totalePrezzoIva = getPrezzo() + getIva(); 
-		return totalePrezzoIva;
+	public String prezzoBase()  {
+		return "Prezzo base: " + getPrezzo();
+	}
+	
+	public String prezzoIva() {
+		float formatIva = (getIva() * getPrezzo()) / 100; 
+		float totalePrezzoIva = getPrezzo() + formatIva; 
+		return "Prezzo comprensivo di iva: " + String.format("%.02f", totalePrezzoIva);
 	}
 }
